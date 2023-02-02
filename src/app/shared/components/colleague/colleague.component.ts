@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
 
@@ -8,14 +8,10 @@ import {LikeHate} from "../../../models/like-hate";
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent {
-  sebastien: Colleague = {
-    pseudo: "Prolias",
-    photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Prolias",
-    score: 100
-  }
+  @Input() colleague!: Colleague;
 
   modifyScore(likehate: LikeHate) {
-    if (likehate === LikeHate.LIKE) this.sebastien.score++;
-    if (likehate === LikeHate.HATE) this.sebastien.score--;
+    if (likehate === LikeHate.LIKE) this.colleague.score += 1;
+    if (likehate === LikeHate.HATE) this.colleague.score -= 1;
   }
 }

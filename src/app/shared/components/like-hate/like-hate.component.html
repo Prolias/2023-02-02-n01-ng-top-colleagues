@@ -1,2 +1,2 @@
-<button (click)="emitLike(LikeHate.LIKE)">J'aime</button>
-<button (click)="emitLike(LikeHate.HATE)">Je déteste</button>
+<button (click)="emitLike(LikeHate.LIKE)" [disabled]="likedMax">J'aime</button>
+<button (click)="emitLike(LikeHate.HATE)" [disabled]="hatedMax">Je déteste</button>
