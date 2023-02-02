@@ -1,8 +1,8 @@
 <div class="card">
   <img [src]="sebastien.photo" [alt]="sebastien.pseudo">
-  <div class="card-body">
+  <div class="card_body">
     <p>{{sebastien.pseudo}}</p>
     <p>{{sebastien.score}}</p>
   </div>
-  <tc-like-hate></tc-like-hate>
+  <tc-like-hate (scoreChange)="modifyScore($event)"></tc-like-hate>
 </div>
