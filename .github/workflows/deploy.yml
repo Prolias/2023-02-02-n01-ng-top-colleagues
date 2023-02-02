@@ -24,11 +24,11 @@ jobs:
     - name: Generate 404.html file
       run: cp dist/top-colleagues/index.html dist/top-colleagues/404.html
     - name: Archive build
-    if: success()
-    uses: actions/upload-artifact@v1
-    with:
-      name: deploy_dist
-      path: dist
+      if: success()
+      uses: actions/upload-artifact@v1
+      with:
+        name: deploy_dist
+        path: dist
   deploy:
     name: Deploy to Github Pages
     runs-on: ubuntu-latest
