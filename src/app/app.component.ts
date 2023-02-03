@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Colleague} from "./models/colleague";
+import {Vote} from "./models/vote";
 
 @Component({
   selector: 'tc-root',
@@ -22,6 +23,27 @@ export class AppComponent {
       pseudo: "Carbonito",
       photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Carbonito",
       score: 500
+    },
+    {
+      pseudo: "Carbonito",
+      photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Carbonito",
+      score: 500
+    },
+    {
+      pseudo: "Carbonito",
+      photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Carbonito",
+      score: 500
+    },
+    {
+      pseudo: "Carbonito",
+      photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Carbonito",
+      score: 500
     }
   ]
+
+  votes: Vote[] = []
+
+  traiterVote(vote: Vote) {
+    this.votes.push(vote);
+  }
 }

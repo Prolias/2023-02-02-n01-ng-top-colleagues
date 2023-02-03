@@ -1,0 +1,17 @@
+<div *ngIf="vote !== undefined" class="card">
+  <img [src]="vote.colleague.photo" [alt]="vote.colleague.pseudo">
+  <div class="card__body">
+    <div>
+      <p>{{vote.colleague.pseudo}}</p>
+      <p>
+        {{vote.colleague.pseudo}} est
+        <span *ngIf="vote.likeHate === LikeHate.LIKE">adoré(e)</span>
+        <span *ngIf="vote.likeHate === LikeHate.HATE">détesté(e)</span>
+        , il/elle a désormais un score de {{vote.colleague.score}}
+      </p>
+    </div>
+    <div>
+      <button (click)="deleteFromHistory()">Supprimer</button>
+    </div>
+  </div>
+</div>

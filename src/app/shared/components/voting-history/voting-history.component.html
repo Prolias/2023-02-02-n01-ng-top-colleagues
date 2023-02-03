@@ -1,0 +1,3 @@
+<section class="history">
+  <tc-voting *ngFor="let vote of votes" [vote]="vote" (deleted)="deleteFromList($event)"></tc-voting>
+</section>

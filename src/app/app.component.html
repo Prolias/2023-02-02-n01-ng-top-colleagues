@@ -1,1 +1,4 @@
-<tc-colleague-list [colleagues]="colleagues"></tc-colleague-list>
+<section class="app">
+  <tc-colleague-list [colleagues]="colleagues" (vote)="traiterVote($event)"></tc-colleague-list>
+  <tc-voting-history [votes]="votes"></tc-voting-history>
+</section>
