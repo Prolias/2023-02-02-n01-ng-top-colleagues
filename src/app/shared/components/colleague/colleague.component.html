@@ -2,7 +2,7 @@
   <img [src]="colleague.photo" [alt]="colleague.pseudo">
   <div class="card_body">
     <p>{{colleague.pseudo | uppercase}}</p>
-    <p>{{colleague.score}}</p>
+    <p>{{colleague.score | score}}</p>
   </div>
   <tc-like-hate (scoreChange)="modifyScore($event)" [likedMax]="colleague.score >= 1000" [hatedMax]="colleague.score <= -1000"></tc-like-hate>
 </div>

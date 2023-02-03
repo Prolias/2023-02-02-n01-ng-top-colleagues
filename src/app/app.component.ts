@@ -11,12 +11,12 @@ export class AppComponent {
     {
       pseudo: "Prolias",
       photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=Prolias",
-      score: 100
+      score: 0
     },
     {
       pseudo: "TavTav",
       photo: "https://api.dicebear.com/5.x/bottts-neutral/svg?seed=TavTav",
-      score: 100
+      score: 0
     },
     {
       pseudo: "Carbonito",
