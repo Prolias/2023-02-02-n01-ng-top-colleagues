@@ -16,7 +16,7 @@ export class ColleagueComponent {
     if (likehate === LikeHate.LIKE) this.colleague.score += 50;
     if (likehate === LikeHate.HATE) this.colleague.score -= 50;
     this.vote.emit({
-      colleague: this.colleague,
+      colleague: {...this.colleague},
       likeHate: likehate
     })
   }
