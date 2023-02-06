@@ -9,7 +9,7 @@ import {ColleagueService} from "../../../providers/colleague.service";
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent {
-  colleagues: Colleague[] = [];
+  colleagues: Colleague[];
 
   @Output() vote = new EventEmitter<Vote>();
 
