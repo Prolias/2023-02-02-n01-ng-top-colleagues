@@ -1,4 +1,10 @@
 .app {
   display: flex;
   flex-flow: row wrap;
+  &__list {
+    flex-basis: 70%;
+  }
+  &__history {
+    flex-basis: 30%;
+  }
 }

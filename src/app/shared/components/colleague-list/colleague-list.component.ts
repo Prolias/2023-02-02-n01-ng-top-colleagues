@@ -9,14 +9,18 @@ import {ColleagueService} from "../../../providers/colleague.service";
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent {
-  colleagues: Colleague[];
+  colleagues: Colleague[] = [];
 
   @Output() vote = new EventEmitter<Vote>();
 
   constructor(private colleagueSrv: ColleagueService) {
-    this.colleagues = colleagueSrv.getAllColleagues();
+    this.refreshList();
   }
 
+  refreshList() {
+    this.colleagueSrv.getAllColleagueFromApi()
+      .subscribe(listColleague => this.colleagues = listColleague);
+  }
 
   traiterVote(vote: Vote) {
     this.vote.emit(vote);

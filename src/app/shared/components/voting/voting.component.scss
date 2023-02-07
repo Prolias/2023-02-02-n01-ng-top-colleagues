@@ -1,7 +1,7 @@
 .card {
   display: flex;
   img{
-    width: 50px;
+    max-height: 50px;
   }
   &__body {
     padding-left: 1em;

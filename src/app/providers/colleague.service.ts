@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Colleague} from "../models/colleague";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -39,9 +41,13 @@ export class ColleagueService {
     }
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllColleagues(): Colleague[] {
     return this.colleagues;
+  }
+
+  getAllColleagueFromApi(): Observable<Colleague[]> {
+    return this.http.get<Colleague[]>('https://dev.cleverapps.io/api/v2/colleagues')
   }
 }
