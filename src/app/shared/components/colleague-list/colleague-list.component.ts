@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
-import {Vote} from "../../../models/vote";
 import {ColleagueService} from "../../../providers/colleague.service";
 
 @Component({
@@ -11,8 +10,6 @@ import {ColleagueService} from "../../../providers/colleague.service";
 export class ColleagueListComponent {
   colleagues: Colleague[] = [];
 
-  @Output() vote = new EventEmitter<Vote>();
-
   constructor(private colleagueSrv: ColleagueService) {
     this.refreshList();
   }
@@ -20,9 +17,5 @@ export class ColleagueListComponent {
   refreshList() {
     this.colleagueSrv.getAllColleagueFromApi()
       .subscribe(listColleague => this.colleagues = listColleague);
-  }
-
-  traiterVote(vote: Vote) {
-    this.vote.emit(vote);
   }
 }

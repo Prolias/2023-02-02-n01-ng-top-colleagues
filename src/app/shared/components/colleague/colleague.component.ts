@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { Vote } from 'src/app/models/vote';
+import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
 import {VoteService} from "../../../providers/vote.service";
@@ -11,7 +10,6 @@ import {VoteService} from "../../../providers/vote.service";
 })
 export class ColleagueComponent {
   @Input() colleague!: Colleague;
-  @Output() vote = new EventEmitter<Vote>();
 
   constructor(private voteSrv: VoteService) {
   }
@@ -22,11 +20,8 @@ export class ColleagueComponent {
       colleague: {...this.colleague}
     })
       .subscribe(colleague => {
-        this.colleague.score = colleague.score
-        this.vote.emit({
-          likeHate: likehate,
-          colleague: {...colleague}
-        });
+        this.colleague.score = colleague.score;
+        this.voteSrv.notifLikeHate(likehate);
       });
   }
 }

@@ -18,6 +18,10 @@ export class VoteService {
     return this.votes;
   }
 
+  getAllVoteFromApi(): Observable<Vote[]> {
+    return this.http.get<Vote[]>('https://dev.cleverapps.io/api/v2/votes')
+  }
+
   observableLikeHate() {
     return this.likeHate.asObservable();
   }

@@ -1,4 +1,4 @@
-import {Component, Input } from '@angular/core';
+import {Component } from '@angular/core';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from "../../../models/vote";
 import {VoteService} from "../../../providers/vote.service";
@@ -9,11 +9,18 @@ import {VoteService} from "../../../providers/vote.service";
   styleUrls: ['./voting-history.component.scss']
 })
 export class VotingHistoryComponent {
-  @Input() votes: Vote[] = [];
+  votes: Vote[] = [];
   LikeHate = LikeHate;
 
   constructor(private voteSrv: VoteService) {
-    this.votes = voteSrv.getAllVotes();
+    this.refreshHistory();
+    voteSrv.observableLikeHate()
+      .subscribe(() => this.refreshHistory());
+  }
+
+  refreshHistory() {
+    this.voteSrv.getAllVoteFromApi()
+      .subscribe(votes => this.votes = votes);
   }
 
   deleteFromList(vote: Vote) {
