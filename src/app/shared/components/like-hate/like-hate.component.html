@@ -1,2 +1,2 @@
-<button (click)="emitLike(LikeHate.LIKE)" [disabled]="likedMax">J'aime</button>
-<button (click)="emitLike(LikeHate.HATE)" [disabled]="hatedMax">Je déteste</button>
+<button mat-raised-button color="primary" (click)="emitLike(LikeHate.LIKE)" [disabled]="likedMax">J'aime</button>
+<button mat-raised-button color="warn" (click)="emitLike(LikeHate.HATE)" [disabled]="hatedMax">Je déteste</button>

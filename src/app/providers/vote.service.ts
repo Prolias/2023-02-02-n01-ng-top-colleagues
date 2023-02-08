@@ -19,7 +19,7 @@ export class VoteService {
   }
 
   getAllVoteFromApi(): Observable<Vote[]> {
-    return this.http.get<Vote[]>('https://dev.cleverapps.io/api/v2/votes')
+    return this.http.get<Vote[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes')
   }
 
   observableLikeHate() {
@@ -31,6 +31,6 @@ export class VoteService {
   }
 
   postVote(vote: Vote): Observable<any> {
-    return this.http.post<any>('https://dev.cleverapps.io/api/v2/votes', {like_hate: vote.likeHate, pseudo: vote.colleague.pseudo});
+    return this.http.post<any>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes', {like_hate: vote.likeHate, pseudo: vote.colleague.pseudo});
   }
 }

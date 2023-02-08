@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import {SharedModule} from "./shared/shared.module";
 import {WelcomeModule} from "./pages/welcome/welcome.module";
 import {HttpClientModule} from "@angular/common/http";
+import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-    imports: [
-        BrowserModule,
-        SharedModule,
-        WelcomeModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    SharedModule,
+    WelcomeModule,
+    HttpClientModule,
+    CreateColleagueModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

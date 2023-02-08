@@ -1,0 +1,35 @@
+<form #fStatus="ngForm" class="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Pseudo</mat-label>
+    <input matInput required type="text" name="pseudo" [(ngModel)]="colleagueToCreate.pseudo">
+    <mat-error>
+      Pseudo non valide.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Prénom</mat-label>
+    <input matInput required minlength="2" type="text" name="first" [(ngModel)]="colleagueToCreate.first">
+    <mat-error>
+      Prénom non valide.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput required minlength="2" type="text" name="last" [(ngModel)]="colleagueToCreate.last">
+    <mat-error>
+      Nom non valide.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Photo</mat-label>
+    <input matInput required type="text" name="photo" [(ngModel)]="colleagueToCreate.photo">
+    <mat-error>
+      Photo non valide.
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [disabled]="fStatus.invalid" (click)="valider()">Valider</button>
+</form>

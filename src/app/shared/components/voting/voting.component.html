@@ -1,17 +1,17 @@
-<div *ngIf="vote !== undefined" class="card">
-  <img [src]="vote.colleague.photo" [alt]="vote.colleague.pseudo">
-  <div class="card__body">
-    <div>
-      <p>{{vote.colleague.pseudo}}</p>
-      <p>
+<mat-card *ngIf="vote !== undefined">
+  <mat-card-header>
+    <img mat-card-avatar [src]="vote.colleague.photo" [alt]="vote.colleague.pseudo">
+    <mat-card-title>{{vote.colleague.pseudo}}</mat-card-title>
+    <mat-card-subtitle>
+      <div>
         {{vote.colleague.pseudo}} est
-        <span *ngIf="vote.likeHate === LikeHate.LIKE">adoré(e)</span>
-        <span *ngIf="vote.likeHate === LikeHate.HATE">détesté(e)</span>
+          <span *ngIf="vote.likeHate === LikeHate.LIKE">adoré(e)</span>
+          <span *ngIf="vote.likeHate === LikeHate.HATE">détesté(e)</span>
         , il/elle a désormais un score de {{vote.score}}
-      </p>
-    </div>
-    <div>
-      <button (click)="deleteFromHistory()">Supprimer</button>
-    </div>
-  </div>
-</div>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="deleteFromHistory()">Supprimer</button>
+    </mat-card-actions>
+</mat-card>
