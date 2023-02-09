@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class ColleagueService {
 
-  private _URL: string = "https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2";
+  private _URL: string = "https://dev.cleverapps.io/api/v2";
 
   colleagues: Colleague[] = [
     {

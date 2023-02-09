@@ -13,6 +13,9 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
+import { MenuComponent } from '../components/menu/menu.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 
 
@@ -25,23 +28,28 @@ import {MatListModule} from "@angular/material/list";
         VotingHistoryComponent,
         VotingComponent,
         CounterComponent,
-        CreateColleagueFormsComponent
+        CreateColleagueFormsComponent,
+        MenuComponent
     ],
-    exports: [
-        LikeHateComponent,
-        ColleagueComponent,
-        ColleagueListComponent,
-        VotingHistoryComponent,
-        CounterComponent,
-        CreateColleagueFormsComponent
-    ],
+  exports: [
+    LikeHateComponent,
+    ColleagueComponent,
+    ColleagueListComponent,
+    VotingHistoryComponent,
+    CounterComponent,
+    CreateColleagueFormsComponent,
+    MenuComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule,
+    RouterLink,
+    RouterLinkActive
   ]
 })
 export class SharedModule { }

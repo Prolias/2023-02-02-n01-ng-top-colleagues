@@ -7,6 +7,7 @@ import {WelcomeModule} from "./pages/welcome/welcome.module";
 import {HttpClientModule} from "@angular/common/http";
 import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     WelcomeModule,
     HttpClientModule,
     CreateColleagueModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
